@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Binary Sight</title>
+  <link rel="stylesheet" href="homstyle.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css">
+</head>
+<body>
+  <div class="menu-backdrop" id="menuBackdrop"></div>
+  <aside class="side-menu" id="sideMenu">
+    <div class="menu-header">
+      <div class="logo"><i class="fa-solid fa-terminals"></i> Binary<span>Sight</span></div>
+      <button class="menu-close-btn" id="menuCloseBtn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <nav class="side-nav-links">
+      <a href="home.html" class="active"><i class="fa-solid fa-house"></i> Home</a>
+      <a href="curriculum.html"><i class="fa-solid fa-graduation-cap"></i> Curriculum</a>
+      <a href="sandbox.html"><i class="fa-solid fa-laptop-code"></i> Live Sandbox</a>
+      <a href="#" id="sideGetStartedBtn"><i class="fa-solid fa-user-plus"></i> Get Started</a>
+    </nav>
+    <div class="menu-footer">
+      <button class="theme-toggle-btn" id="themeBtn"><i class="fa-solid fa-moon"></i> Toggle Mode</button>
+    </div>
+  </aside>
+  <header class="top-bar">
+    <button class="hamburger-btn" id="hamburgerBtn"><i class="fa-solid fa-bars"></i></button>
+    <div class="top-bar-logo"><i class="fa-solid fa-terminal"></i> Binary<span>Sight</span></div>
+    <button class="btn btn-primary" id="navLoginBtn">Join Now</button>
+  </header>
+  <div id="pageMainWrapper">
+    <section class="hero" id="hero">
+      <div class="hero-content">
+        <span class="badge">Next-Gen Web Education</span>
+        <h1>Build Websites With Ultimate Clarity</h1>
+        <p>Stop copy-pasting code templates blindly. Demystify frontend architectures and asynchronous engine runtimes.</p>
+        <div class="hero-buttons">
+          <button class="btn btn-primary" id="heroGetStartedBtn">Start Free Coding</button>
+          <a href="#curriculum" class="btn btn-secondary">Explore Blueprints</a>
+        </div>
+      </div>
+      <div class="code-showcase-container">
+        <div class="window-preview standard-shadow">
+          <div class="window-header">
+            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+            <span class="window-title"><i class="fa-brands fa-html5"></i> component.html</span>
+          </div>
+          <pre><code><span class="tag">&lt;div</span> <span class="attr">class</span>=<span class="string">"binary-card"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;h3&gt;</span>Learn Layout Matrix<span class="tag">&lt;/h3&gt;</span>
+  <span class="tag">&lt;button</span> <span class="attr">onclick</span>=<span class="string">"execute()"</span><span class="tag">&gt;</span>Run<span class="tag">&lt;/button&gt;</span>
+<span class="tag">&lt;/div&gt;</span></code></pre>
+        </div>
+        <div class="window-preview standard-shadow secondary-window">
+          <div class="window-header">
+            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+            <span class="window-title"><i class="fa-brands fa-js"></i> core-engine.js</span>
+          </div>
+          <pre><code><span class="keyword">const</span> <span class="variable">binarySight</span> = {
+  <span class="property">purpose</span>: <span class="string">"Educate & Guide"</span>,
+  <span class="property">difficulty</span>: <span class="string">"Zero to Mastery"</span>,
+  <span class="property">renderLessons</span>: (<span class="params">ui</span>) => {
+    <span class="keyword">return</span> ui.<span class="method">materialize</span>();
+  }
+};</code></pre>
+        </div>
+      </div>
+    </section>
+    <section class="features" id="curriculum">
+      <div class="section-title">
+        <h2>Comprehensive Engineering Matrix</h2>
+        <p>Break down modern layout standards into isolated mental models.</p>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <i class="fa-solid fa-layer-group card-icon"></i>
+          <h3>Structural Layouts</h3>
+          <p>Master absolute/relative layouts, Flexbox properties, and browser rendering hierarchies.</p>
+        </div>
+        <div class="card">
+          <i class="fa-solid fa-border-all card-icon"></i>
+          <h3>CSS Grid Architectures</h3>
+          <p>Build advanced auto-fitting grid templates and dynamic minmax card grids seamlessly.</p>
+        </div>
+        <div class="card">
+          <i class="fa-solid fa-sliders card-icon"></i>
+          <h3>Dynamic Token Engines</h3>
+          <p>Configure advanced target scoping, native CSS variables, and cascading overrides.</p>
+        </div>
+        <div class="card">
+          <i class="fa-solid fa-wand-magic-sparkles card-icon"></i>
+          <h3>Micro-Interactions</h3>
+          <p>Animate interactive state elements, multi-step bezier flows, and continuous timeline reveals.</p>
+        </div>
+        <div class="card">
+          <i class="fa-solid fa-bolt card-icon"></i>
+          <h3>Asynchronous Operations</h3>
+          <p>Deconstruct client event listeners, promise tracking, and dynamic modern API data hooks.</p>
+        </div>
+        <div class="card">
+          <i class="fa-solid fa-shield-halved card-icon"></i>
+          <h3>State & Input Validation</h3>
+          <p>Enforce clean layout validation, secure password masking, and robust sanitization.</p>
+        </div>
+      </div>
+    </section>
+    <section class="sandbox-section" id="sandbox">
+      <div class="sandbox-split">
+        <div class="sandbox-info">
+          <span class="badge secondary-badge">Interactive Workspaces</span>
+          <h2>Write Code. Observe Live Compiles.</h2>
+          <p>Binary Sight features fully sandbox-isolated code playgrounds baked directly into your workflow panels.</p>
+          <ul class="bullet-highlights">
+            <li><i class="fa-solid fa-circle-check text-accent"></i> Built-in console error debugging traces</li>
+            <li><i class="fa-solid fa-circle-check text-accent"></i> Infinite nesting property inspectors</li>
+            <li><i class="fa-solid fa-circle-check text-accent"></i> Real-time layout render toggles</li>
+          </ul>
+        </div>
+        <div class="window-preview sandbox-preview-frame">
+          <div class="window-header">
+            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+            <span class="window-title"><i class="fa-brands fa-css3-alt"></i> modern-layout.css</span>
+          </div>
+          <pre><code><span class="keyword">.sandbox-playground</span> {
+  <span class="property">display</span>: grid;
+  <span class="property">grid-template-columns</span>: repeat(<span class="number">3</span>, <span class="number">1fr</span>);
+  <span class="property">gap</span>: <span class="number">24px</span>;
+  <span class="property">transform</span>: translateY(<span class="number">0px</span>);
+  <span class="property">transition</span>: transform <span class="number">0.4s</span> cubic-bezier(<span class="number">0.1</span>, <span class="number">1</span>, <span class="number">0.3</span>, <span class="number">1</span>);
+}</code></pre>
+        </div>
+      </div>
+
+      <!-- ==========================================================================
+   🔄 SECTION 01: HOW IT WORKS STEP ENGINE
+   ========================================================================== -->
+<section class="sandbox-section">
+  <div class="features">
+    <div class="section-title">
+      <span class="badge secondary-badge">Learning Matrix Workflow</span>
+      <h2>Your Path from Zero to Architecture Mastery</h2>
+      <p>Master frontend engineering mechanics through three clean execution cycles.</p>
+    </div>
+    
+    <div class="grid">
+      <div class="card">
+        <span class="card-icon"><i class="fa-solid fa-map-location-dot"></i></span>
+        <h3>1. Select a Challenge Node</h3>
+        <p>Pick an interactive track challenge from the blueprints menu panel to dynamically pull the template configurations live into your local environment workspace.</p>
+      </div>
+
+      <div class="card">
+        <span class="card-icon"><i class="fa-solid fa-terminal"></i></span>
+        <h3>2. Compile Your Code Layers</h3>
+        <p>Type custom styles or functions into the central terminal engine. Real-time criteria verification checkers parse your tags instantly for syntactic correctness.</p>
+      </div>
+
+      <div class="card">
+        <span class="card-icon"><i class="fa-solid fa-circle-check"></i></span>
+        <h3>3. Clear Tracking Milestones</h3>
+        <p>Unlocking validation milestones automatically synchronizes point metrics to your persistent memory vaults, unlocking deeper nesting verification tracks.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+   💳 SECTION 02: PRICING SYSTEM TIERS (WITH ANNUAL TOGGLE)
+   ========================================================================== -->
+<section class="sandbox-section">
+  <div class="section-title" style="text-align: center; margin-bottom: 40px;">
+    <span class="badge">System Access Levels</span>
+    <h2>Pick Your Blueprint Access Scale</h2>
+    <p>Get instant cloud runtime allocation parameters tailored to your current engineering pace.</p>
+    
+    <!-- 🔄 DYNAMIC BILLING CYCLE SWITCH -->
+    <div style="display: inline-flex; align-items: center; justify-content: center; margin-top: 30px; gap: 16px; background: var(--panel); border: 1px solid var(--border); padding: 6px; border-radius: 30px;">
+      <button id="billingToggleMonthly" class="btn" style="padding: 8px 18px; border-radius: 20px; font-size: 13px; background: var(--primary); color: #000;">Monthly</button>
+      <button id="billingToggleYearly" class="btn" style="padding: 8px 18px; border-radius: 20px; font-size: 13px; background: transparent; color: var(--text); position: relative;"> Yearly 
+        <span style="position: absolute; top: -14px; right: -20px; font-size: 9px; font-weight: 700; background: #fb923c; color: #000; padding: 2px 6px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;">Save 20%</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="grid">
+    <!-- Free Tier Card -->
+    <div class="card">
+      <span class="badge">Zero Cost Baseline</span>
+      <h3 class="plan-price-display" style="font-size: 28px; margin: 10px 0;">$0 <span style="font-size: 14px; color: var(--muted);">/ Forever</span></h3>
+      <p>Perfect for testing sandboxed components and checking layout display matrices safely.</p>
+      <ul class="bullet-highlights" style="margin: 20px 0;">
+        <li><i class="fa-solid fa-check text-accent"></i> Access to Track 01 Baseline Nodes</li>
+        <li><i class="fa-solid fa-check text-accent"></i> Local Terminal Console Buffers</li>
+        <li><i class="fa-solid fa-check text-accent"></i> Basic Theme Token Management</li>
+      </ul>
+      <a href="#" class="btn btn-secondary btn-block">Active Level</a>
+    </div>
+
+    <!-- Pro Tier Card -->
+    <div class="card" style="border-color: var(--primary); box-shadow: 0 10px 30px rgba(0, 255, 170, 0.05);">
+      <span class="badge secondary-badge">Most Popular Track</span>
+      <!-- Added dynamic data attributes for our js switcher engine -->
+<h3 id="proPriceContainer">
+  <span id="proPrice" data-monthly="$19" data-yearly="$15">$19 <span style="font-size: 14px; color: var(--muted);">/ Monthly</span></h3>
+</h3>      
+      <p>Unlock complete microtask architectures alongside advanced pipeline compilation engines.</p>
+      <ul class="bullet-highlights" style="margin: 20px 0;">
+        <li><i class="fa-solid fa-check text-accent"></i> 100% Core Curriculum Access Unlock</li>
+        <li><i class="fa-solid fa-check text-accent"></i> Infinite Nesting Inspectors Enabled</li>
+        <li><i class="fa-solid fa-check text-accent"></i> High-Friction Audio Accents Active</li>
+      </ul>
+      <a href="#" class="btn btn-primary btn-block">Upgrade System Clearance</a>
+    </div>
+
+    <!-- Enterprise Tier Card -->
+    <div class="card">
+      <span class="badge" style="background: rgba(167, 139, 250, 0.1); color: #a78bfa;">Corporate Architect</span>
+      <h3 id="enterprisePrice" class="plan-price-display" data-monthly="$49" data-yearly="$39" data-cycle="/ Monthly" style="font-size: 28px; margin: 10px 0;">$49 <span style="font-size: 14px; color: var(--muted);">/ Monthly</span></h3>
+      <p>Tailored for software engineering teams, multi-seat code sync, and bootcamps.</p>
+      <ul class="bullet-highlights" style="margin: 20px 0;">
+        <li><i class="fa-solid fa-check text-accent"></i> Everything included in Pro Tier</li>
+        <li><i class="fa-solid fa-check text-accent"></i> Shared Team Collaborative Sandboxes</li>
+        <li><i class="fa-solid fa-check text-accent"></i> Custom Blueprint Export Engine API</li>
+      </ul>
+      <a href="#" class="btn btn-secondary btn-block">Deploy Team Portal</a>
+    </div>
+  </div>
+</section>
+
+
+
+
+    </section>
+    <footer class="system-footer">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo"><i>BS</i><span>Binary Sight</span></div>
+          <p>Demystifying modern web engineering paradigms through isolated mental blueprints.</p>
+        </div>
+        <div class="footer-links-column">
+          <h4>Curriculum Blueprint</h4>
+          <a href="#matrix">Structural Grid Matrix</a>
+          <a href="#tokens">Dynamic Token Engines</a>
+          <a href="#async">Asynchronous Operations</a>
+        </div>
+        <div class="footer-links-column">
+          <h4>Engineering Sandbox</h4>
+          <a href="#sandbox">Isolated Workspace</a>
+          <a href="#compile">Live Compile Engine</a>
+          <a href="#debug">Console Debugger</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Binary Sight. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+  <div id="authModal" class="auth-modal-overlay">
+  <div class="modal-backdrop"></div>
+  <div class="auth-container-modal">
+    <button id="modalCloseBtn" class="modal-close-btn">&times;</button>
+    
+    <div class="auth-tabs">
+      <button id="loginTab" class="tab-btn active">Sign In</button>
+      <button id="signupTab" class="tab-btn">Register</button>
+    </div>
+
+    <!-- Wrapping your fields inside a true form component enables javascript submission captures -->
+    <form class="auth-form">
+      <h3 id="formTitle">Welcome Back</h3>
+      
+      <div id="usernameField" class="modal-input-group">
+        <input type="text" id="username" placeholder=" " required />
+        <label for="username">Username</label>
+      </div>
+
+      <div id="emailField" class="modal-input-group hidden">
+        <input type="email" id="email" placeholder=" " />
+        <label for="email">Email Address</label>
+      </div>
+
+      <div class="modal-input-group">
+        <input type="password" id="password" placeholder=" " required />
+        <label for="password">Password</label>
+      </div>
+
+      <button type="submit" id="submitBtn" class="modal-submit-btn">Sign In</button>
+    </form>
+  </div>
+</div>
+
+  <script src="home.js"></script>
+</body>
+</html>

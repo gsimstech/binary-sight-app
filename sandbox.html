@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sandbox Matrix | Binary Sight</title>
+  <link rel="stylesheet" href="sandstyle.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css">
+</head>
+<body>
+
+    
+ <div class="menu-backdrop" id="menuBackdrop"></div>
+  <aside class="side-menu" id="sideMenu">
+    <div class="menu-header">
+      <div class="logo"><i class="fa-solid fa-terminal"></i> Binary<span>Sight</span></div>
+      <button class="menu-close-btn" id="menuCloseBtn"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <nav class="side-nav-links">
+      <a href="home.html"><i class="fa-solid fa-house"></i> Home</a>
+      <a href="curriculum.html"><i class="fa-solid fa-graduation-cap"></i> Curriculum</a>
+      <a href="sandbox.html" class="active"><i class="fa-solid fa-laptop-code"></i> Live Sandbox</a>
+      <a href="#" id="sideGetStartedBtn"><i class="fa-solid fa-user-plus"></i> Get Started</a>
+    </nav>
+    <div class="menu-footer">
+      <button class="theme-toggle-btn" id="themeBtn"><i class="fa-solid fa-moon"></i> Toggle Mode</button>
+    </div>
+  </aside>
+  <header class="top-bar">
+    <button class="hamburger-btn" id="hamburgerBtn"><i class="fa-solid fa-bars"></i></button>
+    <div class="top-bar-logo" onclick="window.location.href='index.html'" style="cursor: pointer;"><i class="fa-solid fa-terminal"></i> Binary<span>Sight</span></div>
+    <button class="btn btn-primary" id="navLoginBtn">Join Now</button>
+    
+  </header>
+
+  <!-- SPLIT OPERATIONAL WORKSPACE CORE WRAPPER -->
+  <main id="pageMainWrapper" class="sandbox-workspace-canvas">
+    
+
+    <!-- LEFT PANEL: Dynamic Documentation Challenge Matrix -->
+    <aside class="sandbox-docs-panel">
+      <div class="docs-header">
+        <span class="badge">Operational Runtime</span>
+        <h2>Execution Core</h2>
+        <p>Type custom code layers into the central terminal engine block to parse system matrices and verify token flows.</p>
+      </div>
+<!-- Floating Workspace Focus Toggle Button -->
+<button id="workspaceToggleBtn" class="workspace-global-toggle-btn" title="Toggle Workspace View">
+  <i class="fa-solid fa-code"></i>
+</button>
+
+      <div class="challenge-directory">
+        <h3>Available Track Missions</h3>
+        
+
+          <!-- ==================== TRACK CARD 01 ==================== -->
+        <div class="challenge-node theme-grid" data-track-focus="grid" data-progress="0">
+         <div class="node-header-wrapper">
+          <div class="node-meta">
+            <span class="node-tag tag-emerald">Track 01</span>
+            <h4>Structural Grid Matrix</h4>
+          </div>
+        </div>
+         <div class="completion-checkmark-wrapper"></div>
+        <p>Parse structural display calculations. Pass validation rules like <code>display: grid</code>.</p>
+ 
+        <span class="completion-badge-matrix"></span>
+        <div class="progress-container">
+         <div class="progress-fill" data-target-width="0%"></div>
+        </div>
+       </div>
+
+
+         <!-- ==================== TRACK CARD 02 ==================== -->
+        <div class="challenge-node theme-tokens" data-track-focus="tokens" data-progress="0">
+         <div class="node-header-wrapper">
+          <div class="node-meta">
+            <span class="node-tag">Track 02</span>
+            <h4>Dynamic Token Engines</h4>
+          </div>
+           <div class="completion-checkmark-wrapper"></div>
+          <p>Mutate variable maps. Input runtime falling parameters like <code>--var-name</code> custom property configurations to clear verification tracks.</p>
+        </div>
+            
+        <span class="completion-badge-matrix"></span>
+         <div class="progress-container">
+         <div class="progress-fill" data-target-width="0%"></div>
+        </div>
+       </div>
+
+
+          <!-- ==================== TRACK CARD 03 ==================== -->
+        <div class="challenge-node theme-async" data-track-focus="async" data-progress="0">
+         <div class="node-header-wrapper">
+          <div class="node-meta">
+            <span class="node-tag">Track 03</span>
+            <h4>Asynchronous Operations</h4>
+          </div>
+           <div class="completion-checkmark-wrapper"></div>
+          <p>Evaluate event execution streams. Craft asynchronous pipeline loops declaring statements like <code>async</code>, <code>fetch()</code>, or <code>Promise</code> blocks.</p>
+        </div>
+              
+        <span class="completion-badge-matrix"></span>
+         <div class="progress-container">
+         <div class="progress-fill" data-target-width="0%"></div>
+        </div>
+       </div>
+    </aside>  
+
+    <!-- RIGHT STUDIO: Full Terminal Workspace Development Block -->
+    <section class="sandbox-terminal-container">
+      <div class="terminal-window-card">
+        
+        <div class="editor-header-bar">
+          <div class="window-controls">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <div class="active-file-indicator">
+            compiler_layer.css
+          </div>
+        </div>
+
+<div class="editor-input-viewport">
+  <textarea id="sandboxCodeInput" placeholder="/* Input your custom execution script matrix blocks here */"></textarea>
+</div>
+
+        <div class="console-output-viewport">
+          <div class="console-title-row">
+            <span><i class="fa-solid fa-terminal"></i> Terminal System Buffer</span>
+            <span class="system-status-indicator">Ready</span>
+          </div>
+          <div id="sandboxOutputPanel" class="console-log-lines">Console: System buffer cleared. Engine ready.</div>
+        </div>
+
+        <div class="terminal-action-tray">
+  <button type="button" class="btn btn-secondary" id="sandboxResetBtn" style="border-color: rgba(244, 63, 94, 0.2); color: #f43f5e;">
+    <i class="fa-solid fa-rotate-left"></i> Reset Progress
+  </button>
+
+          <button id="sandboxClearBtn" class="btn btn-secondary"><i class="fa-solid fa-trash-can"></i> Flush Console</button>
+          <button id="sandboxRunBtn" class="btn btn-primary"><i class="fa-solid fa-play"></i> Run Execution</button>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- RESTORED TIMELINE PORTAL AUTHENTICATION MODAL OVERLAY -->
+  <div id="authModal" class="auth-modal-overlay">
+  <div class="modal-backdrop"></div>
+  <div class="auth-container-modal">
+    <button id="modalCloseBtn" class="modal-close-btn">&times;</button>
+    
+    <div class="auth-tabs">
+      <button id="loginTab" class="tab-btn active">Sign In</button>
+      <button id="signupTab" class="tab-btn">Register</button>
+    </div>
+
+    <!-- Wrapping your fields inside a true form component enables javascript submission captures -->
+    <form class="auth-form">
+      <h3 id="formTitle">Welcome Back</h3>
+      
+      <div id="usernameField" class="modal-input-group">
+        <input type="text" id="username" placeholder=" " required />
+        <label for="username">Username</label>
+      </div>
+
+      <div id="emailField" class="modal-input-group hidden">
+        <input type="email" id="email" placeholder=" " />
+        <label for="email">Email Address</label>
+      </div>
+
+      <div class="modal-input-group">
+        <input type="password" id="password" placeholder=" " required />
+        <label for="password">Password</label>
+      </div>
+
+      <button type="submit" id="submitBtn" class="modal-submit-btn">Sign In</button>
+    </form>
+  </div>
+</div>
+
+
+  <script src="sandbox.js"></script>
+</body>
+</html>
