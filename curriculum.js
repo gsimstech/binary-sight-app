@@ -624,22 +624,30 @@ init() {
       DOM.systemFooter?.classList.remove('is-blurred');
     },
     setMode(mode) {
-      const isLogin = mode === 'login';
-      DOM.loginTab?.classList.toggle('active', isLogin);
-      DOM.signupTab?.classList.toggle('active', !isLogin);
-      if (DOM.formTitle) DOM.formTitle.textContent = isLogin ? 'Welcome Back' : 'Create Blueprint Account';
-      if (DOM.submitBtn) DOM.submitBtn.textContent = isLogin ? 'Sign In' : 'Join Now';
-      
-      if (isLogin) {
-        DOM.usernameField?.classList.remove('hidden'); 
-        DOM.emailField?.classList.add('hidden');
-        DOM.emailInput?.removeAttribute('required');
-      } else {
-        DOM.usernameField?.classList.remove('hidden');
-        DOM.emailField?.classList.remove('hidden');
-        DOM.emailInput?.setAttribute('required', '');
-      }
-    },
+  const isLogin = mode === 'login';
+  DOM.loginTab?.classList.toggle('active', isLogin);
+  DOM.signupTab?.classList.toggle('active', !isLogin);
+  
+  if (DOM.formTitle) {
+    DOM.formTitle.textContent = isLogin ? 'Welcome Back' : 'Create Blueprint Account';
+  }
+  if (DOM.submitBtn) {
+    DOM.submitBtn.textContent = isLogin ? 'Sign In' : 'Join Now';
+  }
+  
+  if (isLogin) {
+    // Keep username display configuration active, enforce hidden rule onto email field
+    DOM.usernameField?.classList.remove('hidden'); 
+    DOM.emailField?.classList.add('hidden');
+    DOM.emailInput?.removeAttribute('required');
+  } else {
+    // Reveal both username and email input node matrices for registration
+    DOM.usernameField?.classList.remove('hidden');
+    DOM.emailField?.classList.remove('hidden');
+    DOM.emailInput?.setAttribute('required', '');
+  }
+},
+
     init() {
       DOM.navLoginBtn?.addEventListener('click', (e) => {
         e.preventDefault();
@@ -655,7 +663,7 @@ init() {
         e.preventDefault();
         MenuController.close();
         this.setMode('login');
-        setTimeout(() => this.open(), 350);
+        setTimeout(() => this.open(), 300);
       });
       DOM.modalClose?.addEventListener('click', () => this.close());
       DOM.modalBackdrop?.addEventListener('click', () => this.close());
@@ -664,69 +672,6 @@ init() {
       });
       DOM.loginTab?.addEventListener('click', () => this.setMode('login'));
       DOM.signupTab?.addEventListener('click', () => this.setMode('signup'));
-
-      // ⚡ INTERCEPT LIVE FORM SECTIONS TO PROCESS SUBMISSIONS
-      const authForm = document.querySelector('#authModal form') || document.querySelector('.auth-form form');
-      authForm?.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        const username = DOM.usernameInput?.value || '';
-        const email = DOM.emailInput?.value || '';
-        const isLoginMode = DOM.loginTab?.classList.contains('active');
-        
-        if (DOM.submitBtn) {
-          DOM.submitBtn.textContent = isLoginMode ? 'Authorizing Profile...' : 'Creating System Blueprint...';
-          DOM.submitBtn.disabled = true;
-        }
-
-        setTimeout(() => {
-          const userProfile = {
-            username: username || (isLoginMode ? 'Developer_Node' : 'New_Architect'),
-            email: email || 'sandbox@binarysight.io',
-            authenticated: true,
-            clearanceLevel: 'L3_System_Architect'
-          };
-
-          localStorage.setItem('binarySightSession', JSON.stringify(userProfile));
-          console.log(`[Security Matrix] Authorization granted for user: ${userProfile.username}`);
-          
-          if (DOM.sandboxOutputPanel) {
-            DOM.sandboxOutputPanel.textContent = `[SYSTEM MATRIX INITIALIZED]\nWelcome Back, ${userProfile.username}.\nClearance Profile Layer verified matching token matrix maps secure.`;
-            DOM.sandboxOutputPanel.style.color = 'var(--primary)';
-          }
-
-          if (DOM.submitBtn) {
-            DOM.submitBtn.textContent = isLoginMode ? 'Sign In' : 'Join Now';
-            DOM.submitBtn.disabled = false;
-          }
-          
-          if (typeof InteractionAudioEngine !== 'undefined') {
-            InteractionAudioEngine.playSwitchClick(true);
-          }
-          
-          this.close();
-          
-          if (DOM.navLoginBtn) {
-            DOM.navLoginBtn.innerHTML = `<i class="fa-solid fa-user-shield"></i> ${userProfile.username}`;
-            DOM.navLoginBtn.style.color = 'var(--primary)';
-          }
-        }, 1200);
-      });
-
-      // 🔄 PERSISTENT INSPECTOR GATE RE-LOAD CHECKER
-      const activeSession = localStorage.getItem('binarySightSession');
-      if (activeSession) {
-        try {
-          const parsedUser = JSON.parse(activeSession);
-          console.log(`[Restore Pipeline] Active profile thread restored for: ${parsedUser.username}`);
-          if (DOM.navLoginBtn) {
-            DOM.navLoginBtn.innerHTML = `<i class="fa-solid fa-user-shield"></i> ${parsedUser.username}`;
-            DOM.navLoginBtn.style.color = 'var(--primary)';
-          }
-        } catch (err) {
-          console.error("Session parse error matrix cleared:", err);
-        }
-      }
     }
   };
 

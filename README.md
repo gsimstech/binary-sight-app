@@ -27,7 +27,7 @@ To launch this architecture locally:
    ```bash
    cd YOUR-REPOSITORY-NAME
    ```
-3. Open `home.html` inside your favorite browser engine to initialize the components instantly.
+3. Open `index.html` inside your favorite browser engine to initialize the components instantly.
 
 ## 🗒 Project Framework Roadmap
 - [x] Restructured unified pricing level cards matching the forever framework model.
