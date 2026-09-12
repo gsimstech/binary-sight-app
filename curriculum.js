@@ -33,92 +33,9 @@ document.addEventListener('DOMContentLoaded', () => {
     sandboxResetBtn: document.getElementById('sandboxResetBtn')
   };
 
-  // ==========================================================================
-  // 🔊 CENTRAL SYNTHESIZED TACTILE SWITCH CLICK ENGINE
-  // ==========================================================================
-  const InteractionAudioEngine = {
-    playSwitchClick(isActionPositive) {
-      try {
-        const AudioContext = window.AudioContext || window.webkitAudioContext;
-        if (!AudioContext) return;
-        const ctx = new AudioContext();
-        const now = ctx.currentTime;
-
-        // 1. Core Plastic Thump Oscillator
-        const clickOsc = ctx.createOscillator();
-        const clickGain = ctx.createGain();
-        clickOsc.type = 'triangle';
-        clickOsc.connect(clickGain);
-        clickGain.connect(ctx.destination);
-
-        // 2. High-Friction Spring Snapping White Noise Buffer
-        const bufferSize = ctx.sampleRate * 0.04; 
-        const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
-        const data = buffer.getChannelData(0);
-        for (let i = 0; i < bufferSize; i++) {
-          data[i] = Math.random() * 2 - 1;
-        }
-        const noiseSource = ctx.createBufferSource();
-        const noiseGain = ctx.createGain();
-        noiseSource.buffer = buffer;
-        noiseSource.connect(noiseGain);
-        noiseGain.connect(ctx.destination);
-
-        if (isActionPositive) {
-          // Sharp Upward Switch Flip (Expansion / Run Code / Tab Select)
-          clickOsc.frequency.setValueAtTime(620, now);
-          clickOsc.frequency.setValueAtTime(840, now + 0.012);
-
-          clickGain.gain.setValueAtTime(0, now);
-          clickGain.gain.linearRampToValueAtTime(0.06, now + 0.002);
-          clickGain.gain.exponentialRampToValueAtTime(0.001, now + 0.038);
-
-          noiseGain.gain.setValueAtTime(0, now);
-          noiseGain.gain.linearRampToValueAtTime(0.04, now + 0.004);
-          noiseGain.gain.exponentialRampToValueAtTime(0.001, now + 0.032);
-        } else {
-          // Heavier Downward Switch Flip (Collapse / Clear Console / Close portals)
-          clickOsc.frequency.setValueAtTime(480, now);
-          clickOsc.frequency.setValueAtTime(360, now + 0.01);
-
-          clickGain.gain.setValueAtTime(0, now);
-          clickGain.gain.linearRampToValueAtTime(0.05, now + 0.002);
-          clickGain.gain.exponentialRampToValueAtTime(0.001, now + 0.045);
-
-          noiseGain.gain.setValueAtTime(0, now);
-          noiseGain.gain.linearRampToValueAtTime(0.025, now + 0.003);
-          noiseGain.gain.exponentialRampToValueAtTime(0.001, now + 0.038);
-        }
-
-        clickOsc.start(now);
-        noiseSource.start(now);
-        clickOsc.stop(now + 0.05);
-        noiseSource.stop(now + 0.05);
-      } catch (e) {
-        console.warn("Audio pipeline deferred by system policy matrix map:", e);
-      }
-    },
-
-    // Attaches the acoustic switch trigger loop across universal button blocks
-    bindButtonAccents() {
-      // Targets standard global actions, workspace buttons, and navigation elements
-      const targetButtons = document.querySelectorAll('.btn, .tab-btn, .theme-toggle-btn, .hamburger-btn, .modal-close-btn');
-      
-      targetButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-          // Determine sound style based on structural clear/close intentions
-          const isNegativeAction = btn.classList.contains('modal-close-btn') || 
-                                  btn.id === 'sandboxClearBtn' || 
-                                  btn.classList.contains('menu-close-btn');
-          
-          this.playSwitchClick(!isNegativeAction);
-        });
-      });
-    }
-  };
 
    // ==========================================================================
-  // 📚 INTERACTIVE MASTER CURRICULUM BLUEPRINTS (SYNCED FROM STORAGE)
+  //  INTERACTIVE MASTER CURRICULUM BLUEPRINTS (SYNCED FROM STORAGE)
   // ==========================================================================
   const CurriculumController = {
     // Utility to sync layout structures live from data caches
@@ -239,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // ==========================================================================
-  // 💻 SANDBOX INTERACTIVE WORKSPACE ENGINE WITH PROGRESS MANAGEMENT
+  //  SANDBOX INTERACTIVE WORKSPACE ENGINE WITH PROGRESS MANAGEMENT
   // ==========================================================================
     const CodeSandboxController = {
     // Tracks completed sub-steps dynamically during the active user runtime session
@@ -344,7 +261,7 @@ document.addEventListener('DOMContentLoaded', () => {
           const sessionSteps = this.subTaskMatrix[activeTrack];
 
           // ====================================================================
-          // 🔎 CRITERIA CHECKERS (RIGOROUS RULES ENGINE MATRIX)
+          //  CRITERIA CHECKERS (RIGOROUS RULES ENGINE MATRIX)
           // ====================================================================
           if (activeTrack === 'grid') {
             // Task 1: Check for Grid or Flex container initializations
@@ -606,7 +523,7 @@ init() {
   };
 
 // ==========================================================================
-  // 🔐 INTERACTIVE AUTHORIZATION MODAL RUNTIME ENGINE
+  //  INTERACTIVE AUTHORIZATION MODAL RUNTIME ENGINE
   // ==========================================================================
   const AuthModalController = {
     open() {

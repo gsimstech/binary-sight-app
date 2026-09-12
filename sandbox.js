@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // ==========================================================================
-  // 🧭 RESPONSIVE NAVIGATION CONTROL LAYER
+  //  RESPONSIVE NAVIGATION CONTROL LAYER
   // ==========================================================================
   const MenuController = {
     open() {
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // ==========================================================================
-  // 🌗 GLOBAL MULTI-THEME TOKEN MANAGER
+  //  GLOBAL MULTI-THEME TOKEN MANAGER
   // ==========================================================================
   const ThemeController = {
     key: 'binarySightTheme',
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // ==========================================================================
-  // 🔐 FIXED AUTH MODAL FLOW MANAGER (TIMELINE CLOSURES)
+  //  FIXED AUTH MODAL FLOW MANAGER (TIMELINE CLOSURES)
   // ==========================================================================
     const AuthModalController = {
     open() {
@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
      // ==========================================================================
-  // 📚 INTERACTIVE MASTER CURRICULUM BLUEPRINTS (SYNCED FROM STORAGE)
+  //  INTERACTIVE MASTER CURRICULUM BLUEPRINTS (SYNCED FROM STORAGE)
   // ==========================================================================
   const CurriculumController = {
     // Utility to sync layout structures live from data caches
@@ -282,7 +282,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // ==========================================================================
-  // 💻 SANDBOX INTERACTIVE WORKSPACE ENGINE WITH PROGRESS MANAGEMENT
+  //  SANDBOX INTERACTIVE WORKSPACE ENGINE WITH PROGRESS MANAGEMENT
   // ==========================================================================
     const CodeSandboxController = {
     // Tracks completed sub-steps dynamically during the active user runtime session
